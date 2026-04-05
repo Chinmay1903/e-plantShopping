@@ -27,24 +27,24 @@ const CartItem = ({ onContinueShopping }) => {
     alert('Functionality to be added for future reference');
   };
 
-  const handleIncrement = (item) => {
-    // Dispatch updateQuantity with current quantity + 1
-    dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }));
-  };
+    const handleIncrement = (item) => {
+        // Task: Use updateQuantity to change item count
+        dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }));
+    };
 
-  const handleDecrement = (item) => {
-    if (item.quantity > 1) {
-      // Dispatch updateQuantity with current quantity - 1
-      dispatch(updateQuantity({ name: item.name, quantity: item.quantity - 1 }));
-    } else {
-      // If quantity reaches 0, remove the item entirely
-      dispatch(removeItem(item.name));
-    }
-  };
+    const handleDecrement = (item) => {
+        if (item.quantity > 1) {
+            dispatch(updateQuantity({ name: item.name, quantity: item.quantity - 1 }));
+        } else {
+            // Task: Use removeItem to delete item completely if quantity reaches 0
+            dispatch(removeItem(item.name));
+        }
+    };
 
-  const handleRemove = (item) => {
-    dispatch(removeItem(item.name));
-  };
+    const handleRemove = (item) => {
+        // Task: Use removeItem action
+        dispatch(removeItem(item.name));
+    };
 
   // Calculate total cost based on quantity for an individual item
   const calculateTotalCost = (item) => {
